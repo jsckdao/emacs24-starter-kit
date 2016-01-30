@@ -1,0 +1,32 @@
+#+TITLE: Emacs Starter Kit Config for Web Development
+#+OPTIONS: toc:2 num:nil ^:nil
+
+#+begin_quote
+ Emacs Web 配置
+
+#+end_quote
+
+* 必要的 mode
+
+-检查并自动加载安装 js2-mode 
+
+#+begin_src emacs-lisp
+(starter-kit-install-if-needed 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+#+end_src
+
+-检查并加载安装 smart-tabs-mode
+
+#+begin_src emacs-lisp
+(starter-kit-install-if-needed 'smart-tabs-mode)
+#+end_src
+
+
+* 配置缩进
+
+#+begin_src emacs-lisp
+(setq-default indent-tabs-mode t)
+(setq js2-indent-line 2)
+(setq js2-basic-offset 2) 
+#+end_src
+
