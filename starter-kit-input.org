@@ -1,0 +1,46 @@
+#+TITLE: Emacs Starter Kit Input Method Setting
+#+OPTIONS: toc:2 num:nil ^:nil
+
+#+begin_quote
+  Emacs 输入法配置
+#+end_quote
+
+* 基本配置
+
+-加载需要的文件
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "lib/eim")
+(autoload 'eim-use-package "eim" "Another emacs input method")
+#+end_src
+
+-取消 tooltip, 因为暂时还不好用
+
+#+begin_src emacs-lisp
+(setq eim-use-tooltip nil)
+#+end_src
+
+-输入法注册
+
+#+begin_src emacs-lisp
+(register-input-method
+ "eim-wb" "euc-cn" 'eim-use-package
+ "五笔" "汉字五笔输入法" "wb.txt")
+
+(register-input-method
+ "eim-py" "euc-cn" 'eim-use-package
+ "拼音" "汉字拼音输入法" "py.txt")
+#+end_src
+
+-将拼音输入法设置为默认输入法
+
+#+begin_src emacs-lisp
+(setq default-input-method "eim-py")
+#+end_src
+
+-设置一个习惯使用的快捷键用来切换输入法: Ctrl + Supper + Space
+
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-s-SPC") 'toggle-input-method)
+#+end_src
+

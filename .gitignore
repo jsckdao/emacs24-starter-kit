@@ -22,9 +22,11 @@ image-dired/*
 elim/*
 doc/*
 elpa/*
+site-lisp/*
 src/*
 themes/*
 url/*
+
 
 ## exported and encrypted files
 *gpg
