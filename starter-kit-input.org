@@ -10,7 +10,7 @@
 -加载需要的文件
 
 #+begin_src emacs-lisp
-(add-to-list 'load-path "lib/eim")
+(add-to-list 'load-path (expand-file-name "lib/eim" starter-kit-dir))
 (autoload 'eim-use-package "eim" "Another emacs input method")
 #+end_src
 
